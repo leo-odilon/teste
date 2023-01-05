@@ -25,10 +25,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Zip folder
-      - uses: montudor/action-zip@v1
-        with:
-          args: zip -qq -r backup_${(date +"%Y-%m-%d")} dataloader_mac_v57.0.0
+#       - name: Zip folder
+#       - uses: montudor/action-zip@v1
+#         with:
+#           args: zip -qq -r backup_${(date +"%Y-%m-%d")} dataloader_mac_v57.0.0
 
       - name: Create report file
         run: |
