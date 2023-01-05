@@ -1,0 +1,93 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest: UH8h+nRYT3WdL/XyBjoh4shiN5m5ghFjIOdJz/mnX8g=
+
+Name: dataloader-57.0.0-uber.jar
+SHA-256-Digest: qcLz3PmLKOSCeE7jTdZ1xoVXbC1bAnyaDcBEFdMAwHg=
+
+Name: dataloader.app/Contents/Info.plist
+SHA-256-Digest: ROJ/u+gnvFJMAp2tkn65omfkz9nhRgzR6WqQMmem7/w=
+
+Name: dataloader.app/Contents/MacOS/dataloader
+SHA-256-Digest: p/Otz/26UrsnILbgA0yVvA7IhbmcC2k+z+8ay9wmhuA=
+
+Name: dataloader.app/Contents/PkgInfo
+SHA-256-Digest: 3lVFXLM8DVIBuj4duq5PWYKEXDcNgp8djPSIAcIzW1o=
+
+Name: dataloader.app/Contents/Resources/dataloader.icns
+SHA-256-Digest: tmwC+o7e5gbaXg0ttfySqOFHM4AmePFdi2gMccN0eU4=
+
+Name: install.command
+SHA-256-Digest: J7X6QWtSsW9AlAhKSTTS/irNo7Uam30jWMdOg8jTBiE=
+
+Name: samples/conf/accountExtractMap.sdl
+SHA-256-Digest: 67YIXGIuc+MJJiAXgf9UZWT+Cz1o01YTB3yFjFaYXp8=
+
+Name: samples/conf/accountExtractToDbMap.sdl
+SHA-256-Digest: Uj3kXrk/4pkznnnGQSLytgiNtlLV6cZZgCUfITybnDE=
+
+Name: samples/conf/accountInsertMap.sdl
+SHA-256-Digest: hqlQ3cINbbhOfw9gO4kdirPIk2KP6+DSaj4jDRPmACo=
+
+Name: samples/conf/accountMasterMap.sdl
+SHA-256-Digest: 0aPxQWx7EjRWDibPKaiH2hEBgw/tTK2Hc6qea08Hghs=
+
+Name: samples/conf/accountUpdateMap.sdl
+SHA-256-Digest: /d1iTPMPAMpAV/2qD8qzQeB58yRAn/z/YUUCGgh1MdQ=
+
+Name: samples/conf/database-conf.xml
+SHA-256-Digest: 1Ti/NDArwNH3NNESu17yo9epO2kn3/MgSRifVg7CV3g=
+
+Name: samples/conf/opportunityInsertMap.sdl
+SHA-256-Digest: awQpSLjpND0uUyRxtw2tfs+WgQFq7kas29QL/+d4CWE=
+
+Name: samples/conf/opportunityUpdateMap.sdl
+SHA-256-Digest: hXFyjvwqNTcPYGvPG3xsdBSbzZT6HrFML3LEAG4l3jY=
+
+Name: samples/conf/opportunityUpsertMap.sdl
+SHA-256-Digest: BQa/6AYlEqVLa5ZWrTVM5LbroPyGlnS53Ms7dPi2E28=
+
+Name: samples/conf/process-conf.xml
+SHA-256-Digest: Rgny8R+KqO6B6kjCeXXj+v5gV6dXlMMl43aqzlv/vl0=
+
+Name: samples/conf/sample.key
+SHA-256-Digest: fdlmD6Rh36exh8U+UcaYPavXKzfmGbJrC0T9/7PZEYw=
+
+Name: samples/data/accountData.csv
+SHA-256-Digest: CI55Cnn0paABfD3d9kigcM4fsqVh/TO+hNB3lor/C7I=
+
+Name: samples/data/opportunityData.csv
+SHA-256-Digest: MtH2c+9PLGmHHvAWrn5LfbVmgWZmjvdcmOOElAkaJvI=
+
+Name: samples/status/accountMasterSoapTrace.log
+SHA-256-Digest: j+2LMXwuwpc89lIqiT3xiTT89xjcDJpkbCLn7yMPEF4=
+
+Name: samples/status/error0413060133.csv
+SHA-256-Digest: EpLN/SI2bdd5DScNMA44oNBTxzB/4XgvDgFEqYqj4C8=
+
+Name: samples/status/success0413060133.csv
+SHA-256-Digest: t7H51isd49Ab7cDOcFVP3KpLy8L2VNOqVjQfMLLkzSU=
+
+Name: swtmac_aarch64/libswt-awt-cocoa-4956r13.jnilib
+SHA-256-Digest: g0TesxBvNLxw6ETlmGyJVprUr56KiVE61/xl9wIKjzM=
+
+Name: swtmac_aarch64/libswt-cocoa-4956r13.jnilib
+SHA-256-Digest: okEZX/CRd7AfjE1lRroDGaWWBXej07ynHjkh1b7QrWs=
+
+Name: swtmac_aarch64/libswt-pi-cocoa-4956r13.jnilib
+SHA-256-Digest: YZPpHEhjf9DtG8DjyNmAbs5DnH7Fl3y1Oe4+lXbNOIw=
+
+Name: swtmac_aarch64/swtmac_aarch64-4.26.jar
+SHA-256-Digest: He4fKPq/lq5cTDTHvNBhgeAsmHSvj4GqqqK2YBFtTVg=
+
+Name: swtmac_x86_64/libswt-awt-cocoa-4956r13.jnilib
+SHA-256-Digest: FdJMhXHY/MITOz7UTcfbVuOXi0F4BpSUmCi6oFeKIIQ=
+
+Name: swtmac_x86_64/libswt-cocoa-4956r13.jnilib
+SHA-256-Digest: WjC+FLlBXDjifvON6nDp6aghUw1GXaWvHmPh+P/BA4g=
+
+Name: swtmac_x86_64/libswt-pi-cocoa-4956r13.jnilib
+SHA-256-Digest: kBpVeVWrYscVXcICy6rUU196LHZWgjQzXwGUEKCRrQ4=
+
+Name: swtmac_x86_64/swtmac_x86_64-4.26.jar
+SHA-256-Digest: wO06ZWqlQHjTcBoV8dzn85RRDbzMaKY9um51QxTyRmA=
+
