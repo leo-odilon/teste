@@ -24,13 +24,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      
+
       - name: Zip folder
       - uses: montudor/action-zip@v1
         with:
           args: zip -qq -r dir.zip dataloader_mac_v57.0.0
           
+      - uses: actions/checkout@v3
       - name: Rename File
         run: |
           now=`date +"%Y-%m-%d"`
