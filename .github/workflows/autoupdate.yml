@@ -26,6 +26,7 @@ jobs:
       - name: Rename backup file
         run: |
           now=`date +"%Y-%m-%d"`
+          mkdir backup
           mv backup.zip ./backup/backup-${now}.zip
           
       - uses: shallwefootball/s3-upload-action@master
@@ -35,6 +36,10 @@ jobs:
           aws_bucket: ${{ secrets.AWS_BUCKET }}
           source_dir: 'backup'
           destination_dir: ''
+          
+      - name: Remove backup file
+        run: |
+          rm -r backup/
         
       - name: Create report file
         run: |
