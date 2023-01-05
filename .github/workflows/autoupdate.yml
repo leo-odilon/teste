@@ -26,14 +26,14 @@ jobs:
       - name: Rename backup file
         run: |
           now=`date +"%Y-%m-%d"`
-          mv backup.zip backup-${now}.zip
+          mv backup.zip ./backup/backup-${now}.zip
           
       - uses: shallwefootball/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
-          source_dir: 'backup-${now}.zip'
+          source_dir: 'backup'
         
       - name: Create report file
         run: |
