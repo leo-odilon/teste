@@ -34,6 +34,7 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
           aws_bucket: ${{ secrets.AWS_BUCKET }}
           source_dir: 'backup'
+          destination_dir: ''
         
       - name: Create report file
         run: |
