@@ -27,8 +27,7 @@ jobs:
       - uses: montudor/action-zip@v1
         with:
           args: zip -qq -r backup_${(date +"%Y-%m-%d")} dataloader_mac_v57.0.0
-    
-      - uses: actions/checkout@v3
+  
       - name: Create report file
         run: |
           date >> generated.txt
