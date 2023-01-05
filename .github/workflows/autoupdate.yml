@@ -29,7 +29,12 @@ jobs:
         with:
           type: 'zip'
           path: './dataloader_mac_v57.0.0'
-          filename: 'backup-${date +"%Y-%m-%d"}.zip'
+          filename: 'backup.zip'
+          
+      - name: Rename backup file
+        run: |
+          now=`date +"%Y-%m-%d"`
+          mv backup.zip backup-${now}.zip
         
       - name: Create report file
         run: |
