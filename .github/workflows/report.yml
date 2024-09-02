@@ -1,0 +1,75 @@
+name: CI Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    outputs:
+      test-result: ${{ steps.run-tests.outcome }}  # Armazena o resultado dos testes
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      id: run-tests
+      run: |
+        # Simulando sucesso no teste
+        echo "Tests executed successfully!"
+      continue-on-error: false  # Se falhar, para a execução do job
+
+  generate-report:
+    needs: deploy  # Este job só será executado após o job 'deploy'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: npm install  # Instala dependências caso necessário para gerar o PDF
+
+    - name: Gather PR information
+      id: pr-info
+      run: |
+        echo "PR_TITLE=$(jq -r .pull_request.title $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
+        echo "PR_BODY=$(jq -r .pull_request.body $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
+        echo "PR_AUTHOR=$(jq -r .pull_request.user.login $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
+        echo "PR_CREATED_AT=$(jq -r .pull_request.created_at $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
+        echo "PR_HEAD_REF=$(jq -r .pull_request.head.ref $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
+        echo "PR_BASE_REF=$(jq -r .pull_request.base.ref $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
+
+    - name: Generate PDF report
+      run: |
+        echo "Generating report..."
+        echo "Date: $(date)" > report.txt
+        echo "PR Title: ${{ env.PR_TITLE }}" >> report.txt
+        echo "PR Body: ${{ env.PR_BODY }}" >> report.txt
+        echo "PR Author: ${{ env.PR_AUTHOR }}" >> report.txt
+        echo "PR Created At: ${{ env.PR_CREATED_AT }}" >> report.txt
+        echo "Branch (Head): ${{ env.PR_HEAD_REF }}" >> report.txt
+        echo "Branch (Base): ${{ env.PR_BASE_REF }}" >> report.txt
+        echo "Test Result: ${{ needs.deploy.outputs.test-result }}" >> report.txt
+        echo "Report generated successfully!" >> report.txt
+
+        # Convertendo o arquivo de texto em PDF usando Pandoc
+        sudo apt-get install -y pandoc texlive-latex-base
+        pandoc report.txt -o report.pdf
+
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: deploy-report
+        path: report.pdf
