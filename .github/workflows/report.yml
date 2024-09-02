@@ -38,12 +38,19 @@ jobs:
     - name: Gather PR information
       id: pr-info
       run: |
-        echo "PR_TITLE=$(jq -r .pull_request.title $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
-        echo "PR_BODY=$(jq -r .pull_request.body $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
-        echo "PR_AUTHOR=$(jq -r .pull_request.user.login $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
-        echo "PR_CREATED_AT=$(jq -r .pull_request.created_at $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
-        echo "PR_HEAD_REF=$(jq -r .pull_request.head.ref $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
-        echo "PR_BASE_REF=$(jq -r .pull_request.base.ref $GITHUB_EVENT_PATH)" >> $GITHUB_ENV
+        PR_TITLE=$(jq -r .pull_request.title $GITHUB_EVENT_PATH)
+        PR_BODY=$(jq -r .pull_request.body $GITHUB_EVENT_PATH)
+        PR_AUTHOR=$(jq -r .pull_request.user.login $GITHUB_EVENT_PATH)
+        PR_CREATED_AT=$(jq -r .pull_request.created_at $GITHUB_EVENT_PATH)
+        PR_HEAD_REF=$(jq -r .pull_request.head.ref $GITHUB_EVENT_PATH)
+        PR_BASE_REF=$(jq -r .pull_request.base.ref $GITHUB_EVENT_PATH)
+
+        echo "PR_TITLE=$PR_TITLE" >> $GITHUB_ENV
+        echo "PR_BODY=$PR_BODY" >> $GITHUB_ENV
+        echo "PR_AUTHOR=$PR_AUTHOR" >> $GITHUB_ENV
+        echo "PR_CREATED_AT=$PR_CREATED_AT" >> $GITHUB_ENV
+        echo "PR_HEAD_REF=$PR_HEAD_REF" >> $GITHUB_ENV
+        echo "PR_BASE_REF=$PR_BASE_REF" >> $GITHUB_ENV
 
     - name: Generate PDF report
       run: |
